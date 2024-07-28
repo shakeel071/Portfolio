@@ -33,14 +33,43 @@ buttons.forEach((button, index) => {
   });
 });
 
-//project filters
-var mixer = mixitup('.project-gallery',{
-  selectors: {
-      target: '.project-box'
-  },
-  animation: {
-      duration: 500
-  }
+//project filters ----------------------------------------------
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-buttons button');
+    const boxes = document.querySelectorAll('.project-box');
+    let isAnimating = false;
+
+    function filterProjects(filter) {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        boxes.forEach(box => {
+            box.classList.remove('show', 'hide');
+            void box.offsetWidth; // Trigger reflow to reset animation
+
+            if (filter === 'all' || box.classList.contains(filter.substring(1))) {
+                box.classList.add('show');
+            } else {
+                box.classList.add('hide');
+            }
+        });
+
+        setTimeout(() => {
+            isAnimating = false;
+        }, 500); // Total animation duration
+    }
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            filterButtons.forEach(btn => btn.classList.remove('mixitup-control-active'));
+            this.classList.add('mixitup-control-active');
+            const filter = this.getAttribute('data-filter');
+            filterProjects(filter);
+        });
+    });
+
+    // Show all projects initially
+    filterProjects('all');
 });
 
 //skill progressd bar

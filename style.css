@@ -355,7 +355,7 @@ section{
     left: 50%;
     font-size: 1.05rem;
 }
-/* About us section  */
+/*--------------------------- About us section ------------------------------- */
 .about{
     display: flex;
     justify-content: space-between;
@@ -441,7 +441,7 @@ section{
 .cvContent{
     margin-top: 1.5rem;
 }
-/* Project Section  */
+/* -----------------------Project Section-------------------------  */
 .headings{
     text-align: center;
     background: var(--main-color);
@@ -492,6 +492,29 @@ section{
     background: var(--gradient-white-bg);
     border-radius: 10px;
     transition: all .3s ease;
+}
+.project-box.hide {
+    display: none;
+}
+
+.project-box.show {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: animates 1.5s ease-in-out;
+    transition:all .5s ease;
+}
+
+@keyframes animates {
+    0% {
+        transform: translate(-2000px) scale(0, 0);
+    }
+    50% {
+        transform: translate(0px) scale(0.5, 0.5);
+    }
+    100% {
+        transform: translate(0) scale(1, 1);
+    }
 }
 .project-content{
     width: 100%;
