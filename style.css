@@ -898,9 +898,15 @@ footer{
     .home{
         grid-gap: 0;
     }
-    .filter-buttons button{
-        padding: 10px;
-        font-size: .8rem;
+    .filter-buttons{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        width: 100%;
+    }
+    .filter-buttons > button{
+        flex: 1 1 calc(33.33% - 1rem);
+        margin-bottom: 1rem;
     }
 }
 
@@ -932,11 +938,13 @@ footer{
         padding: 10px 15px;
     }
     .filter-buttons{
-        display: grid;
-        grid-gap: 1rem;
-    }
-    .filter-buttons button{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
         width: 100%;
-        padding: 13px;
+    }
+    .filter-buttons > button{
+        flex: 1 1 calc(33.33% - 1rem);
+        margin-bottom: 1rem;
     }
 }

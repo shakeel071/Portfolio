@@ -185,6 +185,7 @@
             <button class="button" data-filter=".java">Java</button>
             <button class="button" data-filter=".python">Python</button>
             <button class="button" data-filter=".fend">Front-End</button>
+            <button class="button" data-filter=".api">APIs</button>
         </div>
         <div class="project-gallery">
             <div class="project-box mix java">
@@ -304,6 +305,16 @@
                     <img src="image/bill.webp" alt="">
                 </div>
             </div>
+            <div class="project-box mix api">
+                <div class="project-content">
+                    <h3>Weather App</h3>
+                    <p>Developed a weather application using HTML, CSS, and JavaScript, which fetches and displays real-time weather data using an API.</p>
+                    <a href="https://shakeel071.github.io/Weather/" class="read-more">View <i class='bx bx-link-external'></i></a>
+                </div>
+                <div class="project-image">
+                    <img src="image/weather.png" alt="">
+                </div>
+            </div>
         </div>
     </section>
     <section class="down-box" id="contact">
@@ -312,16 +323,17 @@
                 <div class="main-text">
                     <h2 class="headings">Contact Me</h2>
                 </div>
-                <form action="#">
+                <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
                     <div class="input-box">
-                        <input type="text" placeholder="First Name" id="name" required>
-                        <input type="text" placeholder="Last Name" id="last">
+                        <input type="hidden" name="access_key" value="ba2d84d3-156a-4084-befa-0c0e1c89f44c">
+                        <input type="text" placeholder="First Name" name="first_name" id="name" required>
+                        <input type="text" placeholder="Last Name" name="last_name" id="last">
                     </div>
-                    <input type="email" placeholder="Email" pattern="[A-Za-z0-9._]+@[A-Za-z0-9._]+\.[A-Za-z]{2,}$" title="Please enter in this form yourid@domain.prefix" id="email" required>
-                    <input type="text" placeholder="Subject" id="sub">
-                    <textarea cols="30" rows="10" required id="text"></textarea>
+                    <input type="email" placeholder="Email" name="email" title="Please enter in this form yourid@domain.prefix" id="email" required>
+                    <input type="text" placeholder="Subject" name="subject" id="sub" required>
+                    <textarea cols="30" rows="10" name="message" required id="text"></textarea>
                     <div class="form-btn">
-                        <button type="submit" onclick="submits(event)" class="btn">Send Message</button>
+                        <button type="submit" class="btn">Send Message</button>
                     </div>
                 </form>
             </div>

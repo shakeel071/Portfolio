@@ -174,21 +174,11 @@ ScrollReveal().reveal('.about-image,.filter-buttons,.contact-info', { origin: "l
 ScrollReveal().reveal('.about-content,.skills', { origin: "right" });
 ScrollReveal().reveal('.project-gallery,footer,.image-hero', { origin: "bottom" });
 
-function submits(event) {
-    event.preventDefault();
-    let name = document.getElementById('name');
-    let last = document.getElementById('last');
-    let sub = document.getElementById('sub');
-    let email = document.getElementById('email');
-    let text = document.getElementById('text');
-    if (name.value === "" ||email.value==""|| text.value === "") {
-        alert("Please enter details");
-    } else {
-        alert('Hi, ' + name.value + '. Thank you for connecting with us.');
-        name.value = "";
-        last.value = "";
-        sub.value = "";
-        email.value = "";
-        text.value = "";
-    }
-}
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    
+    e.target.submit();
+    
+    setTimeout(function() {
+        e.target.reset();
+    }, 1000); 
+});
